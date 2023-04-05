@@ -1,3 +1,4 @@
+
 let peerConnection;
 let localStream;
 let remoteStream;
@@ -11,7 +12,11 @@ configuration = {};
 const socket = io();
 
 
-callBtn.disabled = true;
+
+
+
+
+callBtn.disabled = false;
 hangUpBtn.disabled = true;
 
 // Hàm lấy Media Stream và hiển thị trên localVideo
@@ -97,7 +102,7 @@ function hangUpCall() {
     hangUpBtn.disabled = true;
     callBtn.disabled = false;
 }
-async function startCall() {
+async function startCall(socket) {
     try {
         const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
         localVideo.srcObject = stream;
@@ -115,6 +120,8 @@ async function startCall() {
         console.error('Failed to get local stream', err);
     }
 }
+
+
 
 
 // Gọi hàm lấy Media Stream

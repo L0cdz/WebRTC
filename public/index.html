@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>WebRTC Video Call</title>
-	<link rel="stylesheet" href="./public/css/style.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
 	<h1>WebRTC Video Call</h1>
@@ -15,9 +16,10 @@
 		<button id="call-btn" onclick="startCall()">Call</button>
 		<button id="hangup-btn" onclick="hangUpCall()" disabled>Hang Up</button>
 	</div>
-	<script src="./public/js/main.js"></script>
-	<script src="/socket.io/socket.io.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js" integrity="sha512-vnwsg7vggn5MFw+mxxiQY5y5j5L5IXPzN9XU2G6ZeM/AS8iO6zAYL/fdIvYUJiB8"></script>
+	<script src="./js/main.js" type="text/javascript"></script>
+
+	
+	
 
 </body>
 </html>
