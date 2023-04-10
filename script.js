@@ -131,3 +131,4 @@ function stopScreenSharing() {
     });
     screenSharing = false
 }
+

@@ -1,82 +1,113 @@
-body{
-    margin: 0;
+body {
+    background-color: #F2F2F2;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.title{
-    top: 0;
-    width: 100%;
-    max-width: 100%;
-    z-index: 1;
-    display: block;
-  
-    position: absolute;
-    background-color: #444444;
-    color: white;
-   margin: 0;
-}
-
-.entry-modal{
-    border: 1px solid #444444;
-    width: 300px;
-    margin: auto;
-    z-index: 9999;
-    position: absolute;
-    left: 50%;
-    top: 70;
-    margin-left: -150px;
-    padding: 5px;
-    color: #fff;
-    background-color: #444444;
-    text-align: center;
-}
-
-#notification{
-    position: absolute;
-    z-index: 1;
-    text-align: center;
-    color: #fff;
     margin: 0;
-    top: 47.33px;
-    font-size: 18pt;
-    width: 100%;
-    background-color: orange;
-}
-
-
-.room-input{
-  border: none;
-  padding:5px;
-}
-
-button{
-    margin: 3px;
-    padding: 5px;
-}
-
-#remote-video{
+  }
+  
+  .title {
+    background-color: #2E2E2E;
+    color: white;
+    display: block;
+    font-size: 24px;
+    margin: 0;
+    padding: 16px;
+    position: fixed;
+    text-align: center;
     top: 0;
-    height: 100%;
     width: 100%;
-    left: 0;
-    background-color: lightgray;
-    position: absolute;
-}
-
-#local-video{
-    top: 60;
-    width: 300;
-    object-fit: cover;
-    height: 150;
     z-index: 1;
-    right: 15;
-    background-color: #444444;
+  }
+  
+  .entry-modal {
+    background-color: #F2F2F2;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    color: #444444;
+    left: 50%;
+    margin: -150px 0 0 -150px;
+    padding: 16px;
     position: absolute;
-}
-.meet-controls-bar{
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    z-index: 9999;
+  }
+  
+  #notification {
+    background-color: #FFA500;
+    color: white;
+    font-size: 18pt;
+    margin: 0;
+    padding: 16px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .room-input {
+    background-color: #F2F2F2;
+    border: 1px solid #444444;
+    box-sizing: border-box;
+    color: #444444;
+    display: block;
+    font-size: 16px;
+    margin: 16px auto;
+    padding: 8px;
+    width: 100%;
+  }
+  
+  button {
+    background-color: #2E2E2E;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px;
+    padding: 8px 16px;
+  }
+  
+  button:hover {
+    background-color: #444444;
+  }
+  
+  .meet-area {
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+  }
+  
+  #remote-video {
+    background-color: #F2F2F2;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+  }
+  
+  #local-video {
+    background-color: #2E2E2E;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    height: 120px;
+    object-fit: cover;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 160px;
+    z-index: 1;
+  }
+  
+  .meet-controls-bar {
+    background-color: rgba(0, 0, 0, 0.5);
     bottom: 0;
-    background-color: black;
+    height: 60px;
     left: 0;
     position: absolute;
     width: 100%;
-}
+  }
+  
