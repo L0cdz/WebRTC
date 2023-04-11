@@ -94,12 +94,12 @@ body {
     background-color: #2E2E2E;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    height: 180px;
+    height: 160px;
     object-fit: cover;
     position: absolute;
     right: 16px;
     top: 16px;
-    width: 260px;
+    width: 220px;
     z-index: 1;
   }
   
@@ -115,4 +115,3 @@ body {
     align-items: center;
     
   }
-  
