@@ -35,8 +35,8 @@ body {
   }
   
   #notification {
-    background-color: #FFA500;
-    color: white;
+    background-color: #fb1e47;
+    color: rgb(0, 0, 0);
     font-size: 18pt;
     margin: 0;
     padding: 16px;
