@@ -22,7 +22,7 @@ function createRoom() {
         getUserMedia({ video: true, audio: true }, (stream) => {
             local_stream = stream;
             setLocalStream(local_stream)
-            alert("Join local succesfully");
+            notify("Create Room Successfully");
         }, (err) => {
             console.log(err)
         })
@@ -43,15 +43,12 @@ function setLocalStream(stream) {
     video.srcObject = stream;
     video.muted = true;
     video.play();
-    document.getElementById("id-lc").innerHTML = "local-video";
-
 }
 function setRemoteStream(stream) {
 
     let video = document.getElementById("remote-video");
     video.srcObject = stream;
     video.play();
-    document.getElementById("id-lc").innerHTML = "remote-video";
 }
 
 function hideModal() {
@@ -85,7 +82,7 @@ function joinRoom() {
             notify("Joining peer")
             let call = peer.call(room_id, stream)
             call.on('stream', (stream) => {
-                alert("Join remote succesfully")
+                notify("Join Room Successfully");
                 setRemoteStream(stream);
             })
             currentPeer = call;
