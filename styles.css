@@ -69,6 +69,7 @@ body {
     font-size: 16px;
     margin: 8px;
     padding: 8px 16px;
+    border-radius: 20px;
   }
   
   button:hover {
@@ -93,21 +94,25 @@ body {
     background-color: #2E2E2E;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    height: 120px;
+    height: 180px;
     object-fit: cover;
     position: absolute;
     right: 16px;
     top: 16px;
-    width: 160px;
+    width: 260px;
     z-index: 1;
   }
   
   .meet-controls-bar {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(185, 178, 178, 0.5);
     bottom: 0;
     height: 60px;
     left: 0;
     position: absolute;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
   }
   
