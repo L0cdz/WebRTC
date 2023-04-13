@@ -11,14 +11,14 @@ background: linear-gradient(0deg, hsla(186, 100%, 69%, 1) 23%, hsla(197, 100%, 6
 
 background: -moz-linear-gradient(0deg, hsla(186, 100%, 69%, 1) 23%, hsla(197, 100%, 63%, 1) 100%, hsla(342, 95%, 78%, 1) 100%);
 
-background: -webkit-linear-gradient(0deg, hsla(186, 100%, 69%, 1) 23%, hsla(197, 100%, 63%, 1) 100%, hsla(342, 95%, 78%, 1) 100%);
+background: -webkit-linear-gradient(0deg, #FF7B89 15%, hsla(197, 100%, 63%, 1) 100%, hsla(342, 95%, 78%, 1) 100%);
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#60EFFF", endColorstr="#40C9FF", GradientType=1 );
   
   }
   
   .title {
-    background-color: #2E2E2E;
+    background-color: #8A5082;
     color: white;
     display: block;
     font-size: 24px;
@@ -80,8 +80,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#60EFFF", en
   }
   
   #notification {
-    background-color: #FFA500;
-    color: white;
+    background-color: #FF7B89;
+    color: black;
     font-size: 18pt;
     margin: 0;
     padding: 16px;
@@ -188,7 +188,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#60EFFF", en
 
   
   .meet-controls-bar {
-    background-color: rgb(32, 33, 36);
+    background-color: #8A5082;
     bottom: 0px;
     height: 80px;
     left: 0;
@@ -198,6 +198,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#60EFFF", en
     align-items: center;
     justify-content: space-between;
     display: none;
+  }
+
+  .meet-controls-bar button{
+    border-radius: 3px;
   }
 
   .user-control {
