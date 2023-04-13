@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -9,53 +10,43 @@
 </head>
 
 <body>
-    
     <div class="wrapper-call" >
-        <h1 class="title">Call Me</h1>
-        <p id="notification" hidden></p>
         <div class="entry-modal" id="entry-modal">
-            <p>Create or Join Meeting</p>
+            <p>Kahoot Call!</p>
             <input id="room-input" class="room-input" placeholder="Enter Room ID">
             <div>
                 <button onclick="createRoom()">Create Room</button>
                 <button onclick="joinRoom()">Join Room</button>
             </div>
         </div>
-        <div class="meet-area">
-            <!-- Remote Video Element-->
-            <video class="active" id="remote-video"></video>
-            <!-- Local Video Element-->
-            <video class="active" id="local-video"></video>
-            <div class="meet-controls-bar">
-                <button onclick="startScreenShare()">Screen Share</button>
+    </div>
     
-                <div class="user-control">
-                    <div class="wrapper-icon">
-                        <i class="fa-solid fa-microphone"></i>
-                    </div>
-                    <div onclick="toggle()" class="wrapper-icon">
-    
-                        <i  class="fa-light fa-video"></i>
-                    </div>
-                    <div class="wrapper-icon">
-                        <i class="fa-regular fa-closed-captioning"></i>
-                    </div>
-                    <div class="wrapper-icon">
-                        <i class="fa-regular fa-hand"></i>
-                    </div>
-                    <div class="wrapper-icon">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </div>
-                    
-                </div>
-    
-                <i class="fa-regular fa-message-captions icon-chat"></i>
+    <p id="notification" hidden></p>
+    <div class="meet-area">
+        <!-- Remote Video Element-->
+        <video class="active" id="remote-video"></video>
+        <!-- Local Video Element-->
+        <video class="active" id="local-video"></video>
+    </div>
+    <div class="meet-controls-bar">    
+        <div class="user-control">
+            <div class="wrapper-icon">
+                <i class="fas fa-circle-stop" onclick="stopScreenSharing()"></i>
+            </div>
+            <div class="wrapper-icon">
+                <i class="fas fa-clone" onclick="toggle()"></i>
+            </div>
+            <div class="wrapper-icon">
+                <i class="fas fa-circle-up" onclick="startScreenShare()"></i>
             </div>
         </div>
     </div>
-</body>
 
-<script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
-<script src="script.js"></script>
+    
+    
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
 
 </html>
