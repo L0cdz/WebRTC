@@ -8,6 +8,12 @@ var peer = null;
 var currentPeer = null
 var screenSharing = false
 function createRoom() {
+
+    setTimeout(() => {
+        document.querySelector('.meet-controls-bar').style.display = "flex"
+        document.querySelector('#local-video').style.display = "block"
+        document.querySelector('#remote-video').style.display = "block"
+    }, 2000)
     console.log("Creating Room")
     let room = document.getElementById("room-input").value;
     if (room == " " || room == "") {
@@ -65,6 +71,15 @@ function notify(msg) {
 }
 
 function joinRoom() {
+
+    setTimeout(() => {
+        document.querySelector('.meet-controls-bar').style.display = "flex"
+        document.querySelector('#local-video').style.display = "block"
+        document.querySelector('#remote-video').style.display = "block"
+       
+
+
+    }, 2000)
     console.log("Joining Room")
     let room = document.getElementById("room-input").value;
     if (room == " " || room == "") {
@@ -127,5 +142,11 @@ function stopScreenSharing() {
         track.stop();
     });
     screenSharing = false
+}
+
+
+function toggle() {
+    document.querySelector('#local-video').classList.toggle('active')
+    document.querySelector('#remote-video').classList.toggle('active')
 }
 
