@@ -18,8 +18,6 @@ roomForm.addEventListener('submit', function(event) {
         joinRoom(roomInput);
     }
 });
-
-
 function createRoom() {
     setTimeout(() => {
         const controlsBar = document.querySelector('.meet-controls-bar');
@@ -28,73 +26,50 @@ function createRoom() {
         localVideo.style.display = "block";
         const remoteVideo = document.querySelector('#remote-video');
         remoteVideo.style.display = "block";
-    }, 2000);
-
-    console.log("Creating Room");
-
+    }, 3000);
+    console.log("Creating Room.");
     const room = document.getElementById("room-input").value.trim();
-
     if (!room) {
-        alert("Please enter room number");
+        alert("Please enter room number.");
         return;
     }
-
     room_id = PRE + room + SUF;
-
     peer = new Peer(room_id);
-
     peer.on('open', (id) => {
         hideModal();
-
         navigator.mediaDevices.getUserMedia({ video: true, audio: true })
             .then((stream) => {
                 local_stream = stream;
                 setLocalStream(local_stream);
-                notify("Create Room Successfully");
+                notify("Create Room Successfully.");
             })
             .catch((err) => console.log(err));
-
-        notify("Waiting for everyone to join.");
     });
-
     peer.on('call', (call) => {
         call.answer(local_stream);
-
         call.on('stream', (stream) => {
             setRemoteStream(stream);
         });
-
         currentPeer = call;
     });
 }
-
-
 function setLocalStream(stream) {
     const video = document.getElementById("local-video");
     video.srcObject = stream;
     video.muted = true;
     video.play();
 }
-
 function setRemoteStream(stream) {
     const video = document.getElementById("remote-video");
     video.srcObject = stream;
     video.play();
 }
-
 function hideModal() {
     document.getElementById("entry-modal").hidden = true;
 }
-
 function notify(msg) {
-    const notification = document.getElementById("notification");
-    notification.innerHTML = msg;
-    notification.hidden = false;
-    setTimeout(() => {
-        notification.hidden = true;
-    }, 3000);
+    alert(msg);
 }
-
 function joinRoom() {
     setTimeout(() => {
         const controlsBar = document.querySelector('.meet-controls-bar');
@@ -103,44 +78,31 @@ function joinRoom() {
         localVideo.style.display = "block";
         const remoteVideo = document.querySelector('#remote-video');
         remoteVideo.style.display = "block";
-    }, 2000);
-
-    console.log("Joining Room");
-
+    }, 3000);
+    console.log("Joining Room.");
     const room = document.getElementById("room-input").value.trim();
-
     if (!room) {
-        alert("Please enter room number");
+        alert("Please enter room number.");
         return;
     }
-
     room_id = PRE + room + SUF;
-
     hideModal();
-
     peer = new Peer();
-
     peer.on('open', (id) => {
         navigator.mediaDevices.getUserMedia({ video: true, audio: true })
             .then((stream) => {
                 local_stream = stream;
                 setLocalStream(local_stream);
-                notify("Joining room");
-
                 const call = peer.call(room_id, stream);
-
                 call.on('stream', (stream) => {
-                    notify("Join Room Successfully");
+                    notify("Join Room Successfully.");
                     setRemoteStream(stream);
                 });
-
                 currentPeer = call;
             })
             .catch((err) => console.log(err));
     });
 }
-
-
 function startScreenShare() {
     if (screenSharing) {
         return;
@@ -174,7 +136,6 @@ function startScreenShare() {
             notify("Failed to start screen sharing. " + err.message);
         });
 }
-
 function stopScreenSharing() {
     if (!screenSharing) {
         return;
@@ -198,11 +159,8 @@ function stopScreenSharing() {
         track.stop();
     });
 }
-
-
-
 function toggle() {
-    document.querySelector('#local-video').classList.toggle('active')
-    document.querySelector('#remote-video').classList.toggle('active')
+    document.querySelector('#local-video').classList.toggle('active');
+    document.querySelector('#remote-video').classList.toggle('active');
 }
 
