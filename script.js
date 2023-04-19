@@ -1,12 +1,13 @@
-const PRE = "DELTA";
-const SUF = "MEET";
-let room_id;
-let local_stream;
-let screenStream;
-let peer = null;
-let currentPeer = null;
-let screenSharing = false;
+const PRE = "DELTA"; //Tạo id phòng
+const SUF = "MEET"; //Tạo id phòng
+let room_id; //ID phòng
+let local_stream; //Stream người tạo
+let screenStream; //Stream màn hình
+let peer = null; //Đối tượng peer
+let currentPeer = null; //Đối tượng peer kết nối hiện tại
+let screenSharing = false; //Xác định có đang share màn
 
+//Gửi yêu cầu 
 const roomForm = document.getElementById('room-form');
 roomForm.addEventListener('submit', function(event) {
     event.preventDefault(); // Ngăn chặn gửi form mặc định của trình duyệt
@@ -18,6 +19,8 @@ roomForm.addEventListener('submit', function(event) {
         joinRoom(roomInput);
     }
 });
+
+//Hàm tạo phòng chat
 function createRoom() {
     setTimeout(() => {
         const controlsBar = document.querySelector('.meet-controls-bar');
@@ -53,12 +56,14 @@ function createRoom() {
         currentPeer = call;
     });
 }
+//Hàm hiển thì stream của người tạo phòng
 function setLocalStream(stream) {
     const video = document.getElementById("local-video");
     video.srcObject = stream;
     video.muted = true;
     video.play();
 }
+//Hàm hiển thì stream của người khác tham gia phòng
 function setRemoteStream(stream) {
     const video = document.getElementById("remote-video");
     video.srcObject = stream;
@@ -67,9 +72,11 @@ function setRemoteStream(stream) {
 function hideModal() {
     document.getElementById("entry-modal").hidden = true;
 }
+//Hàm thông báo trạng thái
 function notify(msg) {
     alert(msg);
 }
+//Hàm tham gia phòng
 function joinRoom() {
     setTimeout(() => {
         const controlsBar = document.querySelector('.meet-controls-bar');
@@ -103,6 +110,7 @@ function joinRoom() {
             .catch((err) => console.log(err));
     });
 }
+//Hàm share màn hình
 function startScreenShare() {
     if (screenSharing) {
         return;
@@ -136,6 +144,7 @@ function startScreenShare() {
             notify("Failed to start screen sharing. " + err.message);
         });
 }
+//Hàm dừng share màn hình
 function stopScreenSharing() {
     if (!screenSharing) {
         return;
